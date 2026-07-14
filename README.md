@@ -1,9 +1,7 @@
 - **`stix/`** — Generated STIX 2.1 bundles produced by the Scenario Generation GPT (LLM₂), representing the structured cyber threat intelligence underlying each tabletop exercise (threat actors, malware, attack patterns, infrastructure, incidents, and relationships).
-  - `financial_sector/` — STIX bundles for the 10 exercises targeting the financial sector.
-  - `other_sectors/` — STIX bundles for the remaining 14 exercises, spanning healthcare, energy, and other sectors.
+  
 - **`ttx/`** — Complete, facilitation-ready tabletop exercises produced by the TTX Reconstruction GPT (LLM₃) from the corresponding STIX scenarios. Each document follows the standardized structure described in the paper (Preparation, Scenario, Response, Analysis).
-  - `financial_sector/` — TTX documents for the 10 financial sector exercises.
-  - `other_sectors/` — TTX documents for the remaining 14 exercises.
+
 
 
 
