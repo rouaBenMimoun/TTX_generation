@@ -1,0 +1,164 @@
+{
+  "type": "bundle",
+  "id": "bundle--6c5f7bba-0ca6-438d-b388-b962a920aa01",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--73f3914a-7f8c-42d1-b32b-a96124c6b611",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Banking Organization (TTX participant)",
+      "identity_class": "organization",
+      "sectors": [
+        "financial-services"
+      ],
+      "description": "Bank with privileged-access support workflows routed through an internal service desk."
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--1a4de7b0-0387-4e24-b96c-cfc4e9251011",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Social engineering actor using voice impersonation",
+      "threat_actor_types": [
+        "crime-syndicate"
+      ],
+      "description": "Adversary attempts privileged access by impersonating a bank executive over voice channels."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--fb987b25-2f01-4ea8-a490-8d25ad751611",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Social engineer help desk into resetting MFA for privileged access",
+      "description": "Adversary uses urgency, authority, and voice impersonation to defeat identity verification processes."
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--1a8c81c1-fef2-4b47-8e93-3ce18b133611",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Deepfake vishing attempt against privileged access workflow",
+      "description": "Simulated social engineering attempt against the bank service desk targeting a privileged account reset."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--2d2445f1-f8cd-4111-a00f-6cb8df0a4c11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 1: executive voice call to help desk",
+      "content": "A caller sounding like a senior executive claims to be locked out during urgent travel and pressures the help desk to bypass normal MFA reset procedures.",
+      "object_refs": [
+        "incident--1a8c81c1-fef2-4b47-8e93-3ce18b133611",
+        "threat-actor--1a4de7b0-0387-4e24-b96c-cfc4e9251011"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--f1c43ee1-b595-4831-a5da-e417ed1dca11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 2: privileged session anomaly after reset",
+      "content": "After the reset, a privileged login appears from an unusual location, forcing the bank to decide whether to disable the account, revoke sessions, and review dependent systems.",
+      "object_refs": [
+        "incident--1a8c81c1-fef2-4b47-8e93-3ce18b133611",
+        "identity--73f3914a-7f8c-42d1-b32b-a96124c6b611"
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--45e7e871-b4f6-4bd8-bffc-8ca2392fb111",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Strict service-desk identity proofing for privileged users",
+      "description": "Require stronger step-up verification and a no-exception model for high-risk reset workflows."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--6ce4ad84-3fd0-4a03-90ee-b70649593b11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Privileged account rapid containment runbook",
+      "description": "Disable accounts, revoke active sessions, rotate credentials, and validate downstream access after suspected social engineering."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--deepfake-inject3-0001",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 3: downstream exposure and business impact decisions",
+      "content": "The investigation shows the privileged account accessed administrative resources and attempted to enumerate connected systems shortly after login. It is not yet clear whether any data was viewed, changed, or exported.",
+      "object_refs": [
+        "incident--1a8c81c1-fef2-4b47-8e93-3ce18b133611",
+        "identity--73f3914a-7f8c-42d1-b32b-a96124c6b611"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--deepfake-inject4-0002",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 4: stabilization, recovery, and follow-on actions",
+      "content": "The organization has contained the privileged account and found no evidence of sustained persistence beyond the initial access window. However, the investigation confirms that the help-desk process was defeated by a convincing voice impersonation attempt and weak exception handling.",
+      "object_refs": [
+        "incident--1a8c81c1-fef2-4b47-8e93-3ce18b133611",
+        "threat-actor--1a4de7b0-0387-4e24-b96c-cfc4e9251011"
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--a00f1a3f-6f25-40fc-a35f-9b4feac6d711",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "TTX Scenario 9 - Deepfake vishing against the help desk for privileged reset",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-04-15T00:00:00.000Z",
+      "description": "Scenario tests service-desk trust boundaries, privileged-access safeguards, and rapid containment after fraudulent reset activity.",
+      "object_refs": [
+        "identity--73f3914a-7f8c-42d1-b32b-a96124c6b611",
+        "threat-actor--1a4de7b0-0387-4e24-b96c-cfc4e9251011",
+        "attack-pattern--fb987b25-2f01-4ea8-a490-8d25ad751611",
+        "incident--1a8c81c1-fef2-4b47-8e93-3ce18b133611",
+        "note--2d2445f1-f8cd-4111-a00f-6cb8df0a4c11",
+        "note--f1c43ee1-b595-4831-a5da-e417ed1dca11",
+        "note--deepfake-inject3-0001",
+        "note--deepfake-inject4-0002",
+        "course-of-action--45e7e871-b4f6-4bd8-bffc-8ca2392fb111",
+        "course-of-action--6ce4ad84-3fd0-4a03-90ee-b70649593b11"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--e9c3da11-7e78-4686-b2d8-c93b72eeb811",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--1a4de7b0-0387-4e24-b96c-cfc4e9251011",
+      "target_ref": "attack-pattern--fb987b25-2f01-4ea8-a490-8d25ad751611"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--8399d15c-758a-48e2-a6a2-7311f5283311",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--45e7e871-b4f6-4bd8-bffc-8ca2392fb111",
+      "target_ref": "attack-pattern--fb987b25-2f01-4ea8-a490-8d25ad751611"
+    }
+  ]
+}

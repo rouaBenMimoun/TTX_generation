@@ -1,0 +1,153 @@
+{
+  "type": "bundle",
+  "id": "bundle--d27bfb36-68f2-4a1b-b16a-7bc4a37cbf3f",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--f0df0a98-2d7b-4f7d-bf6c-f48ef62f5310",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "National Logistics Services",
+      "identity_class": "organization",
+      "sectors": [
+        "transportation"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--ce6f7c77-9f6b-4bc9-b6c3-1570a15e72e5",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Fleet Management Platform",
+      "description": "Platform responsible for vehicle tracking, route planning, and dispatch operations."
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--67d6d902-f9d0-49ef-82f1-9d7ecbb50fd5",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Navigation Disruption Actor",
+      "threat_actor_types": [
+        "nation-state"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--31ec11df-f3dc-4d52-bd17-1e59a53c0b1e",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "GPS Signal Spoofing",
+      "description": "Manipulation of navigation signals causing incorrect location reporting."
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--f5e3f5f2-c2ec-4f50-a6b7-b6d5f0c20e9f",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Fleet GPS Spoofing Incident",
+      "description": "GPS spoofing affects vehicle tracking, routing, and delivery operations."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--1cb7e6c3-11b8-48b5-b6cb-14cbf8d3d1ab",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 1 - Tracking Anomalies",
+      "content": "Fleet operators observe multiple vehicles simultaneously reporting impossible locations hundreds of kilometers from their expected routes."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--86b6d6d7-bb95-4560-8c41-0a4f8d8a9a2c",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 2 - Route Disruption",
+      "content": "Automated route optimization systems begin rerouting deliveries based on false location data, causing widespread delays."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--de60ab73-5945-4cbf-8573-15f5db98a8e8",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 3 - Spoofing Confirmed",
+      "content": "Engineering teams determine GPS receivers are processing spoofed satellite signals, affecting fleet navigation accuracy."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--7d4f3a90-1f0e-4cc3-a11d-792c76baf1fa",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 4 - National Delivery Impact",
+      "content": "Executive leadership declares a major operational incident as nationwide delivery performance drops below service level commitments."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--5c7afcb9-2c3d-48ef-bfc7-73fbb3b52a8f",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Switch to Alternate Navigation Sources",
+      "description": "Use secondary location validation sources and manual dispatch procedures."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--af8e62cc-4c65-4c18-a4f4-c4d16e73b537",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Manual Fleet Coordination",
+      "description": "Coordinate vehicle movements using voice communications and validated location reporting."
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--fa7f91d3-bf3e-4fd8-8d86-2a0eab95437c",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Transportation GPS Spoofing Tabletop Exercise",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-06-22T00:00:00.000Z",
+      "object_refs": [
+        "identity--f0df0a98-2d7b-4f7d-bf6c-f48ef62f5310",
+        "infrastructure--ce6f7c77-9f6b-4bc9-b6c3-1570a15e72e5",
+        "threat-actor--67d6d902-f9d0-49ef-82f1-9d7ecbb50fd5",
+        "attack-pattern--31ec11df-f3dc-4d52-bd17-1e59a53c0b1e",
+        "incident--f5e3f5f2-c2ec-4f50-a6b7-b6d5f0c20e9f",
+        "note--1cb7e6c3-11b8-48b5-b6cb-14cbf8d3d1ab",
+        "note--86b6d6d7-bb95-4560-8c41-0a4f8d8a9a2c",
+        "note--de60ab73-5945-4cbf-8573-15f5db98a8e8",
+        "note--7d4f3a90-1f0e-4cc3-a11d-792c76baf1fa"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--5d6f77d4-5d58-4696-9e83-998eac0fb3e4",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "targets",
+      "source_ref": "threat-actor--67d6d902-f9d0-49ef-82f1-9d7ecbb50fd5",
+      "target_ref": "identity--f0df0a98-2d7b-4f7d-bf6c-f48ef62f5310"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4a7cfe54-6f73-4d85-8a31-b8b81e0c1dd8",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--67d6d902-f9d0-49ef-82f1-9d7ecbb50fd5",
+      "target_ref": "attack-pattern--31ec11df-f3dc-4d52-bd17-1e59a53c0b1e"
+    }
+  ]
+}

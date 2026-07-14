@@ -1,0 +1,161 @@
+{
+  "type": "bundle",
+  "id": "bundle--90e9e243-19d9-4b45-9ea5-21d0b0b5f701",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--2267ce6e-b690-4b71-bf48-227048697711",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Banking Organization (TTX participant)",
+      "identity_class": "organization",
+      "sectors": [
+        "financial-services"
+      ],
+      "description": "Bank providing consumer online and mobile banking services."
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--e2875d53-bc86-40dd-b909-3bfc5e76b711",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Online banking and mobile access platform",
+      "description": "Public-facing digital banking services including authentication, account access, and transfers."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ad9f0954-d8a1-4d48-bf17-23f6c202af11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Flood public banking channels to deny customer access",
+      "description": "High-volume denial-of-service activity disrupts digital banking availability and creates customer panic."
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--3b54f92d-9b79-42fb-b3e0-f3a69b1d4011",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "DDoS against online and mobile banking",
+      "description": "Simulated denial-of-service event affecting customer access to digital channels during a peak usage window."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--7c8d2703-5c86-4f55-8b4b-8da22ad76a11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 1: customer login failures rise sharply",
+      "content": "Customers report widespread failures to access online banking and mobile services, while the bank's status page becomes intermittently unavailable.",
+      "object_refs": [
+        "incident--3b54f92d-9b79-42fb-b3e0-f3a69b1d4011",
+        "infrastructure--e2875d53-bc86-40dd-b909-3bfc5e76b711"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--c9d3e791-67cf-475f-bcfb-687ba9153511",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 2: customer reassurance versus restoration focus",
+      "content": "Leaders must decide how much information to release publicly, which services to prioritize, and whether to invoke external scrubbing, CDN, or traffic-filtering providers.",
+      "object_refs": [
+        "incident--3b54f92d-9b79-42fb-b3e0-f3a69b1d4011",
+        "identity--2267ce6e-b690-4b71-bf48-227048697711"
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--84ed7588-6cc0-470d-a613-f1575b815911",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Invoke DDoS traffic scrubbing and failover",
+      "description": "Route traffic through contracted mitigation services and fail over critical banking components as needed."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--4eb81265-f8e4-4888-b093-862dfae06e11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Customer channel outage communication plan",
+      "description": "Provide alternate service guidance, service status updates, and messaging that reduces panic and misinformation."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--4d0d1d8b-8c71-4b87-9e11-ddosinject3001",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 3: stabilization with uncertain recovery timeline",
+      "content": "Mitigation measures appear to reduce the worst of the disruption, but service performance remains inconsistent. Customer complaints decline slightly, though transaction delays and authentication instability continue. Leadership does not yet have a confident estimate for full restoration.",
+      "object_refs": [
+        "incident--3b54f92d-9b79-42fb-b3e0-f3a69b1d4011",
+        "infrastructure--e2875d53-bc86-40dd-b909-3bfc5e76b711"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--8f1e7b56-1b3d-4e7a-a244-ddosinject4002",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 4: service restoration and recovery",
+      "content": "Traffic conditions normalize and digital banking services are restored to expected performance. The major disruption is considered contained. Leadership must now manage post-incident reporting, customer reassurance, review of service prioritization decisions, and lessons learned.",
+      "object_refs": [
+        "incident--3b54f92d-9b79-42fb-b3e0-f3a69b1d4011",
+        "identity--2267ce6e-b690-4b71-bf48-227048697711"
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--d53134e1-b610-43be-b0ec-144d6b644d11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "TTX Scenario 8 - Distributed denial-of-service against online banking",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-04-15T00:00:00.000Z",
+      "description": "Scenario tests resilience activation, service prioritization, and customer communications during a public-facing outage.",
+      "object_refs": [
+        "identity--2267ce6e-b690-4b71-bf48-227048697711",
+        "infrastructure--e2875d53-bc86-40dd-b909-3bfc5e76b711",
+        "attack-pattern--ad9f0954-d8a1-4d48-bf17-23f6c202af11",
+        "incident--3b54f92d-9b79-42fb-b3e0-f3a69b1d4011",
+        "note--7c8d2703-5c86-4f55-8b4b-8da22ad76a11",
+        "note--c9d3e791-67cf-475f-bcfb-687ba9153511",
+        "note--4d0d1d8b-8c71-4b87-9e11-ddosinject3001",
+        "note--8f1e7b56-1b3d-4e7a-a244-ddosinject4002",
+        "course-of-action--84ed7588-6cc0-470d-a613-f1575b815911",
+        "course-of-action--4eb81265-f8e4-4888-b093-862dfae06e11"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--df77542f-3eb7-4b8d-ab05-e5084fdaaa11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "targets",
+      "source_ref": "attack-pattern--ad9f0954-d8a1-4d48-bf17-23f6c202af11",
+      "target_ref": "infrastructure--e2875d53-bc86-40dd-b909-3bfc5e76b711"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ebc84cb8-e54e-44bf-bc3e-c06265c75c11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--84ed7588-6cc0-470d-a613-f1575b815911",
+      "target_ref": "attack-pattern--ad9f0954-d8a1-4d48-bf17-23f6c202af11"
+    }
+  ]
+}

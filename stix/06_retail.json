@@ -1,0 +1,211 @@
+{
+  "type": "bundle",
+  "id": "bundle--2d76a8a5-7ed7-42a3-b6e3-2a9e248dd72c",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--62ef4f41-3da4-4f98-8a96-0a5f58d57542",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "NorthStar Retail Group",
+      "identity_class": "organization",
+      "sectors": ["retail"]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--44a5376e-ef7e-49e1-a7db-58bc7d7a42a7",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Payment Processor",
+      "identity_class": "organization",
+      "sectors": ["financial-services"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--49e8a7e2-20d4-45ae-9fbb-f1ec7beec3a5",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Point-of-Sale Environment",
+      "description": "Retail payment terminals and back-office systems processing in-store card transactions."
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--9bc7021a-59e6-47dd-9ea6-c2fd14e3e63b",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Card Harvesting Crew",
+      "threat_actor_types": ["crime-syndicate"]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--02bc4d9d-d899-4a46-a210-7829ed1e7f45",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "LaneScrape",
+      "is_family": false,
+      "description": "Memory-scraping malware used to harvest payment card data from POS terminals."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--64d9f36f-0676-4764-9ed7-65f90c2d99f5",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Input Capture",
+      "description": "Collection of payment card data from POS terminal memory.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1056"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--817ef31d-c420-4b1d-8728-b6efa27f2b64",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Exfiltration Over C2 Channel",
+      "description": "Stolen card data is transmitted to attacker-controlled infrastructure.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1041"
+        }
+      ]
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--850a4f12-24ab-4cc2-8ce2-a3cb0a57286e",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Retail Point-of-Sale Card Data Breach",
+      "description": "Memory-scraping malware compromises POS terminals and exposes customer payment card data."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--acaf11fd-17d0-417a-a947-46d237afc9cd",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 1 - Fraud Reports",
+      "content": "The payment processor notifies the retailer of increased fraudulent card activity linked to recent purchases at several stores."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--be369134-2f54-4352-811b-cba8e582c6f0",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 2 - Suspicious POS Traffic",
+      "content": "Network monitoring detects unusual outbound encrypted traffic from POS terminals to an external host not used by approved payment services."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--27c34aa0-304d-4f5c-b5e9-0bd586898884",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 3 - Malware Confirmed",
+      "content": "Forensic analysis confirms memory-scraping malware on multiple POS terminals. Cardholder data may have been collected before authorization messages were encrypted."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--5376de2d-d02e-47ec-9ce8-67a0e105daca",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 4 - Payment Processor Escalation",
+      "content": "The payment processor requests immediate containment actions, transaction logs, affected store list, and a PCI-related incident response briefing."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--3c12df98-6f3d-4947-9b2c-27878563bf64",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Isolate Affected POS Terminals",
+      "description": "Remove compromised POS systems from the network and route transactions through validated backup payment processes."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--e09f3ead-1c71-4c7e-9892-83fbbcb505df",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Perform PCI Incident Response",
+      "description": "Coordinate forensic investigation, payment processor engagement, customer notification analysis, and compliance reporting."
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--9df783f3-f676-4aa4-81f2-069e7fc629fb",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Retail POS Malware Tabletop Exercise",
+      "report_types": ["threat-report"],
+      "published": "2026-06-22T00:00:00.000Z",
+      "object_refs": [
+        "identity--62ef4f41-3da4-4f98-8a96-0a5f58d57542",
+        "identity--44a5376e-ef7e-49e1-a7db-58bc7d7a42a7",
+        "infrastructure--49e8a7e2-20d4-45ae-9fbb-f1ec7beec3a5",
+        "threat-actor--9bc7021a-59e6-47dd-9ea6-c2fd14e3e63b",
+        "malware--02bc4d9d-d899-4a46-a210-7829ed1e7f45",
+        "attack-pattern--64d9f36f-0676-4764-9ed7-65f90c2d99f5",
+        "attack-pattern--817ef31d-c420-4b1d-8728-b6efa27f2b64",
+        "incident--850a4f12-24ab-4cc2-8ce2-a3cb0a57286e",
+        "note--acaf11fd-17d0-417a-a947-46d237afc9cd",
+        "note--be369134-2f54-4352-811b-cba8e582c6f0",
+        "note--27c34aa0-304d-4f5c-b5e9-0bd586898884",
+        "note--5376de2d-d02e-47ec-9ce8-67a0e105daca"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1564a910-0d9f-40df-950f-579dcd4818b2",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "targets",
+      "source_ref": "threat-actor--9bc7021a-59e6-47dd-9ea6-c2fd14e3e63b",
+      "target_ref": "identity--62ef4f41-3da4-4f98-8a96-0a5f58d57542"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0e4aa62b-9648-428f-97d2-046dceefda7d",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--9bc7021a-59e6-47dd-9ea6-c2fd14e3e63b",
+      "target_ref": "malware--02bc4d9d-d899-4a46-a210-7829ed1e7f45"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--15522b09-3831-43a7-852b-341b63c39621",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--9bc7021a-59e6-47dd-9ea6-c2fd14e3e63b",
+      "target_ref": "attack-pattern--64d9f36f-0676-4764-9ed7-65f90c2d99f5"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--c7d944ab-2e71-4b62-8f3f-5a0a196f7b2a",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--9bc7021a-59e6-47dd-9ea6-c2fd14e3e63b",
+      "target_ref": "attack-pattern--817ef31d-c420-4b1d-8728-b6efa27f2b64"
+    }
+  ]
+}

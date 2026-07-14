@@ -1,0 +1,180 @@
+{
+  "type": "bundle",
+  "id": "bundle--0b2db62e-3a01-4adb-a54d-bc62a01ad401",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--65788d90-5a63-455a-9cb4-e8f6ca92fe11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Banking Organization (TTX participant)",
+      "identity_class": "organization",
+      "sectors": [
+        "financial-services"
+      ],
+      "description": "Bank operating cloud-hosted digital onboarding and mortgage workflows."
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--5b229320-eb79-46a5-baa0-67f0d8e58011",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Cloud document storage for digital banking",
+      "description": "Cloud storage containing onboarding documents, ID images, and mortgage application artifacts."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1ed75563-99dc-4e37-8ac1-7cdc6dd7ff11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Expose banking documents through cloud storage misconfiguration",
+      "description": "Sensitive banking data becomes publicly accessible due to misconfigured permissions."
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--3786ea8f-a49b-4b36-87c3-5d3135efb111",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Cloud storage exposure of customer application files",
+      "description": "Simulated data exposure caused by a cloud permissions error in customer-document storage."
+    },
+    {
+      "type": "observed-data",
+      "spec_version": "2.1",
+      "id": "observed-data--5c677ab6-1c8a-46de-87bf-f96b1f719211",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "first_observed": "2026-04-15T00:00:00.000Z",
+      "last_observed": "2026-04-15T00:00:00.000Z",
+      "number_observed": 1,
+      "object_refs": [
+        "attack-pattern--1ed75563-99dc-4e37-8ac1-7cdc6dd7ff11",
+        "infrastructure--5b229320-eb79-46a5-baa0-67f0d8e58011"
+      ],
+      "description": "Simulated observation that unauthenticated access to customer documents is possible from the internet."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--07e2a94d-df43-4be3-b5b8-b9c4acb97611",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 1: external researcher disclosure",
+      "content": "A security researcher informs the bank that customer mortgage and onboarding documents are reachable from a public URL path without authentication.",
+      "object_refs": [
+        "incident--3786ea8f-a49b-4b36-87c3-5d3135efb111",
+        "observed-data--5c677ab6-1c8a-46de-87bf-f96b1f719211"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--79e9b318-2256-4ceb-b0aa-84265f2de311",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 2: scope and notification dilemma",
+      "content": "The bank must determine exposure duration, affected customer count, evidence of access, and whether immediate regulator and customer notification is required.",
+      "object_refs": [
+        "incident--3786ea8f-a49b-4b36-87c3-5d3135efb111",
+        "identity--65788d90-5a63-455a-9cb4-e8f6ca92fe11"
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--f44a3446-07ae-47f8-b3bb-1f2a50df7111",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Immediate cloud access lockdown and logging review",
+      "description": "Revoke public access, preserve logs, and validate retention for exposure window analysis."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--bdc1ca64-2d14-40b7-97b1-794ec58fe511",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Cloud configuration guardrails for sensitive banking data",
+      "description": "Implement preventive policy checks, asset inventory controls, and approval gates for public exposure changes."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--3a98b41e-47f5-4e36-b72d-3a52c6f90001",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 3: external interest and operational pressure",
+      "content": "A journalist contacts corporate communications, stating they received a tip that a bank cloud repository exposed customer mortgage records. At the same time, business leadership asks whether digital onboarding can continue safely, and the fraud team requests a list of potentially affected customers for enhanced monitoring. Social media monitoring shows early speculation but no leaked files have appeared publicly.",
+      "object_refs": [
+        "incident--3786ea8f-a49b-4b36-87c3-5d3135efb111",
+        "identity--65788d90-5a63-455a-9cb4-e8f6ca92fe11",
+        "infrastructure--5b229320-eb79-46a5-baa0-67f0d8e58011"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--6f0d8a7c-5b53-4dd8-bb37-129e91c90002",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 4: containment complete, governance questions remain",
+      "content": "The cloud team confirms public access has been removed. Preliminary review suggests the issue resulted from a permissions error introduced during a storage configuration change. There is still no conclusive evidence of mass download, but the organization cannot rule out third-party access during the exposure period. Leadership requests a formal incident summary, notification recommendation, and control-improvement plan.",
+      "object_refs": [
+        "incident--3786ea8f-a49b-4b36-87c3-5d3135efb111",
+        "identity--65788d90-5a63-455a-9cb4-e8f6ca92fe11",
+        "infrastructure--5b229320-eb79-46a5-baa0-67f0d8e58011",
+        "observed-data--5c677ab6-1c8a-46de-87bf-f96b1f719211"
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--f3133a38-1829-40cf-8c74-cb8f5070f811",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "TTX Scenario 6 - Cloud storage misconfiguration and customer document exposure",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-04-15T00:00:00.000Z",
+      "description": "Scenario tests exposure scoping, notification timing, and cloud governance for sensitive customer data.",
+      "object_refs": [
+        "identity--65788d90-5a63-455a-9cb4-e8f6ca92fe11",
+        "infrastructure--5b229320-eb79-46a5-baa0-67f0d8e58011",
+        "attack-pattern--1ed75563-99dc-4e37-8ac1-7cdc6dd7ff11",
+        "incident--3786ea8f-a49b-4b36-87c3-5d3135efb111",
+        "observed-data--5c677ab6-1c8a-46de-87bf-f96b1f719211",
+        "note--07e2a94d-df43-4be3-b5b8-b9c4acb97611",
+        "note--79e9b318-2256-4ceb-b0aa-84265f2de311",
+        "course-of-action--f44a3446-07ae-47f8-b3bb-1f2a50df7111",
+        "course-of-action--bdc1ca64-2d14-40b7-97b1-794ec58fe511",
+        "note--3a98b41e-47f5-4e36-b72d-3a52c6f90001",
+        "note--6f0d8a7c-5b53-4dd8-bb37-129e91c90002"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--7e04e871-af0c-4b19-b4d4-f0554ad3ae11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "targets",
+      "source_ref": "attack-pattern--1ed75563-99dc-4e37-8ac1-7cdc6dd7ff11",
+      "target_ref": "infrastructure--5b229320-eb79-46a5-baa0-67f0d8e58011"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--21a46a54-b52f-4e90-97db-c7b110cfca11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--bdc1ca64-2d14-40b7-97b1-794ec58fe511",
+      "target_ref": "attack-pattern--1ed75563-99dc-4e37-8ac1-7cdc6dd7ff11"
+    }
+  ]
+}

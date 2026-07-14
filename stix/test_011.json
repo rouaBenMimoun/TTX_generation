@@ -1,0 +1,129 @@
+{
+  "type": "bundle",
+  "id": "bundle--e6a66869-4950-4f55-8ac2-9caee7388901",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--f4bff0dc-79d0-4f8b-b0c5-31bca0aa2111",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Banking Organization (TTX participant)",
+      "identity_class": "organization",
+      "sectors": ["financial-services"],
+      "description": "Bank subject to AML and sanctions-screening obligations across payment flows."
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--e55bb549-f1d6-42b5-a3de-2ab4bc6f0811",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "AML and sanctions screening platform",
+      "description": "System applying watchlists, rules, and interdiction logic to customer and transaction activity."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--8e95aa2f-6623-4869-9892-e0ee7fd95e11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Tamper with compliance screening data or rules to fail open",
+      "description": "Adversary or error condition alters screening integrity and permits unscreened or improperly screened activity."
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--687ca8b7-1316-4df5-9d91-12a8e2610511",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Integrity failure in AML and sanctions screening",
+      "description": "Simulated incident where screening logic fails open and transactions proceed without proper checks."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--f8bdf9c3-838c-4220-bfcb-284dff4c6a11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 1: screening alerts unexpectedly drop to zero",
+      "content": "Compliance operations notices that sanctions and AML alert volumes have dropped abnormally during a period of normal transaction throughput.",
+      "object_refs": [
+        "incident--687ca8b7-1316-4df5-9d91-12a8e2610511",
+        "infrastructure--e55bb549-f1d6-42b5-a3de-2ab4bc6f0811"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--b2a535b5-1fa5-4ef6-bf5d-8fef663f0b11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 2: retrospective review and regulator call",
+      "content": "The bank must decide whether to halt certain payment classes, reconstruct the affected transaction population, and escalate immediately to compliance leadership and regulators.",
+      "object_refs": [
+        "incident--687ca8b7-1316-4df5-9d91-12a8e2610511",
+        "identity--f4bff0dc-79d0-4f8b-b0c5-31bca0aa2111"
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--3ad3f80e-a282-4d57-8c7c-fbfe4d50fc11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Integrity monitoring for compliance rules and watchlists",
+      "description": "Continuously validate rule-set integrity, watchlist updates, and fail-open conditions for compliance systems."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--a4986d65-fb74-43a7-b8cf-22750d2f6811",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Retrospective transaction screening and escalation procedure",
+      "description": "Define hold, replay, lookback, and reporting steps for periods where compliance controls may have failed."
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--8ed6434a-a4ef-4d86-b4d4-877e7f35c811",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "TTX Scenario 10 - Data integrity attack on AML and sanctions screening",
+      "report_types": ["threat-report"],
+      "published": "2026-04-15T00:00:00.000Z",
+      "description": "Scenario tests integrity assurance, compensating controls, and regulatory escalation when screening controls fail.",
+      "object_refs": [
+        "identity--f4bff0dc-79d0-4f8b-b0c5-31bca0aa2111",
+        "infrastructure--e55bb549-f1d6-42b5-a3de-2ab4bc6f0811",
+        "attack-pattern--8e95aa2f-6623-4869-9892-e0ee7fd95e11",
+        "incident--687ca8b7-1316-4df5-9d91-12a8e2610511",
+        "note--f8bdf9c3-838c-4220-bfcb-284dff4c6a11",
+        "note--b2a535b5-1fa5-4ef6-bf5d-8fef663f0b11",
+        "course-of-action--3ad3f80e-a282-4d57-8c7c-fbfe4d50fc11",
+        "course-of-action--a4986d65-fb74-43a7-b8cf-22750d2f6811"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--288e4c0d-4ba2-45a9-a6fc-e8a5185b7a11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "targets",
+      "source_ref": "attack-pattern--8e95aa2f-6623-4869-9892-e0ee7fd95e11",
+      "target_ref": "infrastructure--e55bb549-f1d6-42b5-a3de-2ab4bc6f0811"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2651610f-096a-4d6c-b61c-859c2ee3c411",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--3ad3f80e-a282-4d57-8c7c-fbfe4d50fc11",
+      "target_ref": "attack-pattern--8e95aa2f-6623-4869-9892-e0ee7fd95e11"
+    }
+  ]
+}

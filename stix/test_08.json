@@ -1,0 +1,179 @@
+{
+  "type": "bundle",
+  "id": "bundle--88a42a5e-cc91-434d-8f9b-14d6f1f17601",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--d4a6b648-c57d-40ef-a509-7e247cbd4d11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Banking Organization (TTX participant)",
+      "identity_class": "organization",
+      "sectors": ["financial-services"],
+      "description": "Bank operating SWIFT-connected treasury payment workflows."
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--b0b4bf1f-494f-4f18-b7d2-3f1b40c14911",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "SWIFT-connected payment workstation and gateway",
+      "description": "High-trust environment used to create, approve, and transmit SWIFT payment messages."
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--1f426cba-a8fd-4d28-a859-e0ef24cb5811",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Payment fraud intrusion crew",
+      "threat_actor_types": ["crime-syndicate"],
+      "description": "Threat actor seeking fraudulent fund transfers through treasury payment infrastructure."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--1f40847f-5d54-4c24-9d73-9f9c5cf95c11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Abuse SWIFT-connected workstation to submit fraudulent messages",
+      "description": "Adversary leverages compromised credentials and workstation access to create unauthorized payment messages."
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--ce721e34-3bc1-4ded-b09d-b90ef0b37a11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "SWIFT workstation compromise and suspected fraudulent transfers",
+      "description": "Simulated compromise of treasury payment infrastructure leading to suspicious SWIFT traffic."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--83298d0f-58bc-4c1e-b6fc-ae621cf3c411",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 1: unauthorized messages queued",
+      "content": "Treasury operations finds multiple unusual cross-border payment messages queued from a SWIFT-connected workstation outside normal business patterns.",
+      "object_refs": [
+        "incident--ce721e34-3bc1-4ded-b09d-b90ef0b37a11",
+        "infrastructure--b0b4bf1f-494f-4f18-b7d2-3f1b40c14911"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--4427c32c-7d07-41e5-a7eb-47f18fa33c11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 2: isolate or continue payments",
+      "content": "The bank must decide whether to disconnect SWIFT-connected systems immediately, how to verify queued messages, and how to coordinate recalls with counterpart institutions.",
+      "object_refs": [
+        "incident--ce721e34-3bc1-4ded-b09d-b90ef0b37a11",
+        "identity--d4a6b648-c57d-40ef-a509-7e247cbd4d11"
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--7eec77c5-1a7f-4f56-84c4-cab1b609f711",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Isolate high-trust payment endpoints",
+      "description": "Apply rapid containment and break-glass operations for SWIFT-connected workstations and gateways."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--f34d26c4-8c39-4f71-a75f-4c6c2cb5d411",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Manual verification and recall of high-value payment messages",
+      "description": "Validate message legitimacy, suppress suspicious traffic, and coordinate urgent recalls through defined channels."
+    },
+    {
+	  "type": "note",
+	  "spec_version": "2.1",
+	  "id": "note--c2c5f8d3-9f62-4b6c-a4e7-ef1100000001",
+	  "created": "2026-04-15T00:00:00.000Z",
+	  "modified": "2026-04-15T00:00:00.000Z",
+	  "abstract": "Inject 3: suspicious messages released before full containment",
+	  "content": "Further review shows that one suspicious payment message was released before the queue freeze and is now awaiting downstream processing by a correspondent 						institution. Another queued message was stopped in time. Fraud analysts believe there is still a narrow window to request emergency hold or recall actions if outreach occurs 		immediately.",
+	  "object_refs": [
+	    "incident--ce721e34-3bc1-4ded-b09d-b90ef0b37a11",
+	    "threat-actor--1f426cba-a8fd-4d28-a859-e0ef24cb5811"
+	  ]
+	},
+	{
+	  "type": "note",
+	  "spec_version": "2.1",
+	  "id": "note--d4e6a7b2-5a61-45d3-b2e4-ef1100000002",
+	  "created": "2026-04-15T00:00:00.000Z",
+	  "modified": "2026-04-15T00:00:00.000Z",
+	  "abstract": "Inject 4: recovery and safe restoration",
+	  "content": "The compromised workstation has been isolated, associated credentials have been revoked, and no additional suspicious messages are found in the queue. One 	recall request remains under review by a counterpart institution. Business leadership wants SWIFT-related operations restored quickly, but security advises that reconnecting high-trust payment assets before minimum assurance steps are completed may introduce further risk.",
+	  "object_refs": [
+	    "incident--ce721e34-3bc1-4ded-b09d-b90ef0b37a11",
+	    "infrastructure--b0b4bf1f-494f-4f18-b7d2-3f1b40c14911"
+	  ]
+	}
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--9d879f5c-3e98-4dd2-8b7d-37fe8d8ed311",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "TTX Scenario 7 - SWIFT workstation compromise",
+      "report_types": ["threat-report"],
+      "published": "2026-04-15T00:00:00.000Z",
+      "description": "Scenario tests fraud containment, high-trust asset isolation, and cross-bank coordination.",
+      "object_refs": [
+        "identity--d4a6b648-c57d-40ef-a509-7e247cbd4d11",
+  	"infrastructure--b0b4bf1f-494f-4f18-b7d2-3f1b40c14911",
+  	"threat-actor--1f426cba-a8fd-4d28-a859-e0ef24cb5811",
+  	"attack-pattern--1f40847f-5d54-4c24-9d73-9f9c5cf95c11",
+  	"incident--ce721e34-3bc1-4ded-b09d-b90ef0b37a11",
+  	"note--83298d0f-58bc-4c1e-b6fc-ae621cf3c411",
+  	"note--4427c32c-7d07-41e5-a7eb-47f18fa33c11",
+  	"note--c2c5f8d3-9f62-4b6c-a4e7-ef1100000001",
+  	"note--d4e6a7b2-5a61-45d3-b2e4-ef1100000002",
+  	"course-of-action--7eec77c5-1a7f-4f56-84c4-cab1b609f711",
+  	"course-of-action--f34d26c4-8c39-4f71-a75f-4c6c2cb5d411"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--2848ee95-a460-4dd7-9232-c0ea13ac5a11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--1f426cba-a8fd-4d28-a859-e0ef24cb5811",
+      "target_ref": "attack-pattern--1f40847f-5d54-4c24-9d73-9f9c5cf95c11"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--b9d3c683-8123-493b-bf2f-6aa4d6545211",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "targets",
+      "source_ref": "attack-pattern--1f40847f-5d54-4c24-9d73-9f9c5cf95c11",
+      "target_ref": "infrastructure--b0b4bf1f-494f-4f18-b7d2-3f1b40c14911"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ddcead16-b8b9-4df7-9801-5f7d61731d11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--7eec77c5-1a7f-4f56-84c4-cab1b609f711",
+      "target_ref": "attack-pattern--1f40847f-5d54-4c24-9d73-9f9c5cf95c11"
+    }
+  ]
+}
+

@@ -1,0 +1,101 @@
+{
+  "type": "bundle",
+  "id": "bundle--df68e184-48fa-40c9-8c55-750fc42d2448",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--05b1a1db-431a-4896-ae56-3546f9820ad4",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Food Processing Cooperative",
+      "identity_class": "organization",
+      "sectors": ["agriculture", "food-production"]
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--99006ff0-5046-47a2-8d0c-58bf12ac535b",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Ransomware Operator",
+      "threat_actor_types": ["crime-syndicate"],
+      "primary_motivation": "financial-gain"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--24b2645f-e947-42af-9b25-8c3f815f66d6",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Enterprise Ransomware Payload",
+      "is_family": false
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--09e721a3-f3ab-45b2-8de0-d3878333e6d3",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Food Processing Ransomware TTX",
+      "description": "Ransomware disrupts scheduling, inventory visibility, and cold chain monitoring during active production."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--6013bf50-8d78-41d8-8cc5-025e23d0dbd2",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 1 - Scheduling System Outage",
+      "content": "Production scheduling systems and shared file repositories become unavailable during an active production shift.",
+      "object_refs": ["incident--09e721a3-f3ab-45b2-8de0-d3878333e6d3"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--ed26cf45-65d6-4c7b-bc8e-f517a4f08308",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 2 - Cold Chain Monitoring Loss",
+      "content": "Cold chain dashboards stop updating, creating uncertainty about food safety and product release decisions.",
+      "object_refs": ["incident--09e721a3-f3ab-45b2-8de0-d3878333e6d3"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--4dc28e36-59d9-40de-9468-923f1d7e387c",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 3 - Shipment Pause Decision",
+      "content": "Plant management considers pausing outbound shipments until product integrity can be validated.",
+      "object_refs": ["incident--09e721a3-f3ab-45b2-8de0-d3878333e6d3"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--26086a83-58d9-4982-becd-3ddfa0477e54",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 4 - Supplier and Customer Pressure",
+      "content": "Customers and suppliers request delivery assurance and confirmation that food safety controls remain effective.",
+      "object_refs": ["incident--09e721a3-f3ab-45b2-8de0-d3878333e6d3"]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--4a849a26-e70b-4c84-9c6a-48a3ee6bf5d7",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Agriculture and Food TTX Inject Set",
+      "report_types": ["threat-report"],
+      "published": "2026-06-22T00:00:00.000Z",
+      "object_refs": [
+        "incident--09e721a3-f3ab-45b2-8de0-d3878333e6d3",
+        "note--6013bf50-8d78-41d8-8cc5-025e23d0dbd2",
+        "note--ed26cf45-65d6-4c7b-bc8e-f517a4f08308",
+        "note--4dc28e36-59d9-40de-9468-923f1d7e387c",
+        "note--26086a83-58d9-4982-becd-3ddfa0477e54"
+      ]
+    }
+  ]
+}

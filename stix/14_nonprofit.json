@@ -1,0 +1,65 @@
+{
+  "type": "bundle",
+  "id": "bundle--cba08132-9bd4-4e95-a2e6-38c8d89f7c8f",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--3d5fe8e3-bb99-4477-b42f-45e32ee04533",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "International Humanitarian Nonprofit",
+      "identity_class": "organization",
+      "sectors": ["nonprofit", "charity"]
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--121cf032-2983-40ea-99e3-3d0b8742a462",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Nonprofit Donation Fraud TTX",
+      "description": "A compromised fundraising mailbox is used to redirect donors to fraudulent payment instructions."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--ffdd878c-e339-4961-9e78-2f2d1c03f8f6",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 1 - Donor Reports Suspicious Instructions",
+      "content": "Multiple donors report receiving unusual payment instructions during the fundraising campaign.",
+      "object_refs": ["incident--121cf032-2983-40ea-99e3-3d0b8742a462"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--761c3cb4-a413-45fd-a802-8e8a0a777dd1",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 2 - Forwarding Rule Found",
+      "content": "IT discovers a mailbox forwarding rule that redirects fundraising correspondence to an external account.",
+      "object_refs": ["incident--121cf032-2983-40ea-99e3-3d0b8742a462"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--2c041bc3-9fbd-47d6-a67a-7a32e51c9db4",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 3 - Missing Donations Identified",
+      "content": "Finance identifies donations that were expected but never reached the official donation account.",
+      "object_refs": ["incident--121cf032-2983-40ea-99e3-3d0b8742a462"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--7998f9af-4bfd-4e4e-85aa-7955125ca063",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 4 - Donor Communications",
+      "content": "Donor relations prepares outreach, fraud guidance, and reputation-management messaging.",
+      "object_refs": ["incident--121cf032-2983-40ea-99e3-3d0b8742a462"]
+    }
+  ]
+}

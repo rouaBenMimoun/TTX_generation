@@ -1,0 +1,178 @@
+{
+  "type": "bundle",
+  "id": "bundle--2c9ed5a7-4e2d-4a1d-9f6c-79bb6d52e3ce",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--a6f6b487-7f64-4cf2-b3da-fdcf7d28a6ed",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Lakeside State University",
+      "identity_class": "organization",
+      "sectors": ["education"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--38b08ab5-cfa0-4b14-bbdd-9eb671e5c35b",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "University Identity Provider",
+      "description": "Single sign-on and MFA service used by students, faculty, and staff."
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--9df3469e-08cf-4088-a12c-0b06e4091ce8",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Campus Credential Phishing Actor",
+      "threat_actor_types": ["crime-syndicate"]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--7f2c9e4a-fc7a-413c-bc24-f472cddfc0bd",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Phishing",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1566"
+        }
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--74dc3cc4-06f1-4323-9b55-42c5b43a7f8f",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Valid Accounts",
+      "description": "Use of compromised university credentials to access protected systems.",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1078"
+        }
+      ]
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--6d5d1837-90b5-4434-8571-a98bcb6e7e16",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "University MFA Phishing and Student Records Exposure",
+      "description": "Credential phishing campaign results in unauthorized access to university systems and possible exposure of student records."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--53e5c7b3-5a4d-4d30-a7b2-91236c435df2",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 1 - MFA Reset Phishing",
+      "content": "Students and faculty report emails claiming that MFA enrollment will expire unless they reset their authentication settings through an embedded link."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--2d5d8730-3bdf-4a7e-9e7d-4a0fe10af072",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 2 - Fake Login Portal",
+      "content": "IT identifies a fake university login portal collecting usernames, passwords, and MFA prompts from victims."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--9a9cf978-8033-41bc-961f-07a82e99b9d28",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 3 - Records Accessed",
+      "content": "Audit logs show compromised student accounts used to access academic records and financial aid documents."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--5bfd939b-42af-4e84-85fc-0715cbb8dd09",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 4 - Campus-Wide Response",
+      "content": "University leadership authorizes a forced password reset, MFA token review, student notification planning, and law enforcement coordination."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--8c38a5cd-0704-4e39-b64e-1980637ae399",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Revoke Compromised Sessions",
+      "description": "Revoke active sessions, reset affected credentials, and review MFA token registrations."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--050a4110-ae5f-497e-bb1d-ec66e36d6f91",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Block Phishing Infrastructure",
+      "description": "Block phishing domains, remove malicious messages, and publish user awareness guidance."
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--e1325db3-2da1-4ee6-9f13-ef6d6cf6067e",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Education Phishing Tabletop Exercise",
+      "report_types": ["threat-report"],
+      "published": "2026-06-22T00:00:00.000Z",
+      "object_refs": [
+        "identity--a6f6b487-7f64-4cf2-b3da-fdcf7d28a6ed",
+        "infrastructure--38b08ab5-cfa0-4b14-bbdd-9eb671e5c35b",
+        "threat-actor--9df3469e-08cf-4088-a12c-0b06e4091ce8",
+        "attack-pattern--7f2c9e4a-fc7a-413c-bc24-f472cddfc0bd",
+        "attack-pattern--74dc3cc4-06f1-4323-9b55-42c5b43a7f8f",
+        "incident--6d5d1837-90b5-4434-8571-a98bcb6e7e16",
+        "note--53e5c7b3-5a4d-4d30-a7b2-91236c435df2",
+        "note--2d5d8730-3bdf-4a7e-9e7d-4a0fe10af072",
+        "note--9a9cf978-8033-41bc-961f-07a82e99b9d28",
+        "note--5bfd939b-42af-4e84-85fc-0715cbb8dd09"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--63ac870d-72a2-4fb3-9142-1b2d35afda26",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "targets",
+      "source_ref": "threat-actor--9df3469e-08cf-4088-a12c-0b06e4091ce8",
+      "target_ref": "identity--a6f6b487-7f64-4cf2-b3da-fdcf7d28a6ed"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--dfaf26a0-f73c-46fd-a013-b732f5c2af25",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--9df3469e-08cf-4088-a12c-0b06e4091ce8",
+      "target_ref": "attack-pattern--7f2c9e4a-fc7a-413c-bc24-f472cddfc0bd"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--c3f9cc81-d158-404d-8cc0-75fcb42892a6",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--9df3469e-08cf-4088-a12c-0b06e4091ce8",
+      "target_ref": "attack-pattern--74dc3cc4-06f1-4323-9b55-42c5b43a7f8f"
+    }
+  ]
+}
