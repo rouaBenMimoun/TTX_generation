@@ -1,0 +1,116 @@
+{
+  "type": "bundle",
+  "id": "bundle--a1c15b6c-36f3-49f6-91db-7f59f4ac2f94",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--a5e3f663-2797-4a2d-b33c-61f57de23a36",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Corporate Law Firm",
+      "identity_class": "organization",
+      "sectors": ["legal-services"]
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--d207f675-4c46-459c-a5c8-25668fca41fc",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Commercial Espionage Actor",
+      "threat_actor_types": ["spy"],
+      "primary_motivation": "competitive-advantage"
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--fc54a350-30ae-4f02-8b97-2c04724f31a6",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Legal Document Management System"
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--6283a834-5e8f-4d0f-9e31-73a244f2cf55",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Valid Accounts Used to Access Confidential Matter Files"
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--61092a60-fd10-43aa-af51-36532807e51b",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Law Firm Confidential Matter Access TTX",
+      "description": "Unauthorized access to privileged legal matter files is detected from a compromised attorney account."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--4df08d28-e4d0-4c20-b312-f0c51fcbd57b",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 1 - Unusual Download Volume",
+      "content": "Security monitoring identifies unusually high-volume downloads from sensitive client matter files.",
+      "object_refs": ["incident--61092a60-fd10-43aa-af51-36532807e51b"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--0c2ef78d-fae6-4c70-98fc-4e21ebfe52a1",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 2 - Unmanaged Device Access",
+      "content": "The access is traced to an unmanaged device using a valid attorney account.",
+      "object_refs": ["incident--61092a60-fd10-43aa-af51-36532807e51b"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--153ebd84-b22a-48c8-9d7c-f4b24e88e9ab",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 3 - Sensitive Matter Exposure",
+      "content": "Affected files include active merger, acquisition, and litigation materials protected by client confidentiality obligations.",
+      "object_refs": ["incident--61092a60-fd10-43aa-af51-36532807e51b"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--8ad7c739-788a-4afc-8786-079bf732e54b",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 4 - Client Notification Decision",
+      "content": "Partners assess whether client notification, privilege preservation, and evidence-hold procedures are required.",
+      "object_refs": ["incident--61092a60-fd10-43aa-af51-36532807e51b"]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--edc64d4c-81d8-4f71-847b-0d4c781383f9",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Matter Access Review and Client Notification Assessment"
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--70ff6cc1-8c7a-44e8-b7e4-f0d01dfd11cb",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Legal Services TTX Inject Set",
+      "report_types": ["threat-report"],
+      "published": "2026-06-22T00:00:00.000Z",
+      "object_refs": [
+        "incident--61092a60-fd10-43aa-af51-36532807e51b",
+        "note--4df08d28-e4d0-4c20-b312-f0c51fcbd57b",
+        "note--0c2ef78d-fae6-4c70-98fc-4e21ebfe52a1",
+        "note--153ebd84-b22a-48c8-9d7c-f4b24e88e9ab",
+        "note--8ad7c739-788a-4afc-8786-079bf732e54b"
+      ]
+    }
+  ]
+}

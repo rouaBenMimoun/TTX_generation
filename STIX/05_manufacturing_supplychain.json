@@ -1,0 +1,202 @@
+{
+  "type": "bundle",
+  "id": "bundle--4e36a673-8d7d-4c26-b0aa-53d1bc90bb0a",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--95f82d08-49ea-4943-b37a-5d56f1ef645f",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Global Precision Manufacturing",
+      "identity_class": "organization",
+      "sectors": [
+        "manufacturing"
+      ]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--0c71f7f5-4b5d-4d34-8575-bf55c89a7b97",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Industrial Software Supplier",
+      "identity_class": "organization",
+      "sectors": [
+        "technology"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--a3d0f0b8-6db6-40f3-8f08-ec9dc2e905d6",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Manufacturing Execution System",
+      "description": "Central production management system controlling manufacturing workflows."
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--73c0dfc2-bd15-4a44-9a95-c741db67f4ab",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Supply Chain Intrusion Group",
+      "threat_actor_types": [
+        "nation-state"
+      ]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--4d7d1d64-f9ff-4fa0-b6bc-cd5a54e4f90c",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "FactoryBackdoor",
+      "is_family": false,
+      "description": "Backdoor delivered through a compromised vendor software update."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--bf5f3d69-9177-462d-bb7c-4d7ecbf7eb67",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Compromise Software Supply Chain",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1195.002"
+        }
+      ]
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--18a8b7d5-c0a4-44f9-9d92-b79ea44f69ff",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Compromised Vendor Update Incident",
+      "description": "Manufacturing disruption caused by a malicious software update distributed through a trusted supplier."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--0f8f7d18-c932-4b4c-9e80-69d84bfa38a4",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 1 - Software Update Deployment",
+      "content": "Operations teams deploy a newly released software update from a trusted industrial software supplier across production systems."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--d9c4bc8e-7ef3-48ab-8eb0-f8bb60d4cb82",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 2 - Production Instability",
+      "content": "Multiple production lines begin experiencing unexpected stoppages and abnormal machine behavior following the software update."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--4dd0c59b-cd85-4909-8d7f-98c56f842c4f",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 3 - Malicious Communications Detected",
+      "content": "Security monitoring identifies outbound encrypted communications from manufacturing systems to previously unseen external infrastructure."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--91d1fd38-648f-47fd-9fc5-3bc67e839b35",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 4 - Production Shutdown",
+      "content": "Plant leadership orders a controlled shutdown of production systems while incident responders investigate the suspected supply chain compromise."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--0d0d7f7c-8fc3-4309-8ef7-f96db7eb79a7",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Suspend Vendor Updates",
+      "description": "Immediately halt deployment of vendor updates until software integrity is verified."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--f7f0cb50-5484-4c6f-b65d-9f35a3baf7f4",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Restore Trusted System Baselines",
+      "description": "Rebuild affected systems from known-good configurations and validated backups."
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--79d6cb58-fd69-4f92-b31f-f50b6d8bc5d7",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Manufacturing Supply Chain Compromise Tabletop Exercise",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-06-22T00:00:00.000Z",
+      "object_refs": [
+        "identity--95f82d08-49ea-4943-b37a-5d56f1ef645f",
+        "identity--0c71f7f5-4b5d-4d34-8575-bf55c89a7b97",
+        "infrastructure--a3d0f0b8-6db6-40f3-8f08-ec9dc2e905d6",
+        "threat-actor--73c0dfc2-bd15-4a44-9a95-c741db67f4ab",
+        "malware--4d7d1d64-f9ff-4fa0-b6bc-cd5a54e4f90c",
+        "attack-pattern--bf5f3d69-9177-462d-bb7c-4d7ecbf7eb67",
+        "incident--18a8b7d5-c0a4-44f9-9d92-b79ea44f69ff",
+        "note--0f8f7d18-c932-4b4c-9e80-69d84bfa38a4",
+        "note--d9c4bc8e-7ef3-48ab-8eb0-f8bb60d4cb82",
+        "note--4dd0c59b-cd85-4909-8d7f-98c56f842c4f",
+        "note--91d1fd38-648f-47fd-9fc5-3bc67e839b35"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--4fb1f51c-5d6e-43a6-bd41-70fcb22f53b8",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "targets",
+      "source_ref": "threat-actor--73c0dfc2-bd15-4a44-9a95-c741db67f4ab",
+      "target_ref": "identity--95f82d08-49ea-4943-b37a-5d56f1ef645f"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--88d697d9-d438-48f7-8957-94625ef75c7d",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "targets",
+      "source_ref": "attack-pattern--bf5f3d69-9177-462d-bb7c-4d7ecbf7eb67",
+      "target_ref": "identity--0c71f7f5-4b5d-4d34-8575-bf55c89a7b97"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--53d86ecf-bb58-4620-a36f-38fd3d9d50c0",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--73c0dfc2-bd15-4a44-9a95-c741db67f4ab",
+      "target_ref": "attack-pattern--bf5f3d69-9177-462d-bb7c-4d7ecbf7eb67"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--0f5f0a77-fcb7-4fdf-8610-bd69029f50fd",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--73c0dfc2-bd15-4a44-9a95-c741db67f4ab",
+      "target_ref": "malware--4d7d1d64-f9ff-4fa0-b6bc-cd5a54e4f90c"
+    }
+  ]
+}

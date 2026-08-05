@@ -1,0 +1,144 @@
+{
+  "type": "bundle",
+  "id": "bundle--7b04bc3e-c799-469d-a1d9-8194ab1b71a6",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--fe489911-81e8-48d0-b11e-9080ca4580b1",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "National Procurement Office",
+      "identity_class": "organization",
+      "sectors": ["government"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--40966019-7b3d-4994-8286-bd09ee9ef782",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Internal Procurement File Repository",
+      "description": "Document repository containing procurement plans, supplier evaluations, and contract negotiation materials."
+    },
+    {
+      "type": "tool",
+      "spec_version": "2.1",
+      "id": "tool--e4c79ad7-7291-4b02-8d81-ae59fdc02fed",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Removable USB Storage Device",
+      "tool_types": ["exploitation"],
+      "description": "Personal removable media used to copy sensitive procurement files."
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--4d8dc843-c90a-4e73-a14e-4a13effdc8ff",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Malicious Insider",
+      "threat_actor_types": ["insider-accidental-or-malicious"],
+      "description": "Privileged employee suspected of copying and leaking procurement documents."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--dc1cc91b-97e7-431f-b93b-e232c90d3464",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Exfiltration Over Physical Medium",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1052"
+        }
+      ]
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--d8bbf637-6106-4357-bfb9-7ec41be810ff",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Government Procurement Data Leak",
+      "description": "Sensitive procurement documents are leaked publicly following suspected insider exfiltration."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--054076ef-8f0d-4cbf-adcb-513ae29b39b0",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 1 - Public Disclosure",
+      "content": "Journalists contact the department for comment after sensitive procurement documents appear on a public file-sharing site."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--8056f239-c6b3-4131-b7a5-2f7da6771dd3",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 2 - Internal Source Identified",
+      "content": "The leaked files match documents stored in the internal procurement repository. Access logs show unusual bulk downloads by a procurement analyst."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--1f685a39-dc59-4aca-bd3c-b84092d44750",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 3 - USB Evidence",
+      "content": "Endpoint logs show a personal USB storage device connected shortly after the bulk downloads. Several sensitive files were copied before the device was removed."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--1b3ee8d2-e48d-48ce-820e-69a425d60562",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 4 - Media and Legal Escalation",
+      "content": "Media outlets publish details from the leaked procurement documents. Legal, HR, and senior leadership must coordinate public response, disciplinary process, and regulator notification."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--cd7c2af8-3dbc-4c0d-a16b-fd8447d6c703",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Disable Suspected Insider Access",
+      "description": "Suspend user access, preserve evidence, and coordinate with HR and legal teams."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--c2395079-f864-48d1-86aa-28c560e8de4f",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Restrict Removable Media",
+      "description": "Enforce removable media controls and audit sensitive file transfer activity."
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--f22616ad-6a37-40d8-b2a5-d2451acdcff7",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Government Insider Data Leak Tabletop Exercise",
+      "report_types": ["threat-report"],
+      "published": "2026-06-22T00:00:00.000Z",
+      "object_refs": [
+        "identity--fe489911-81e8-48d0-b11e-9080ca4580b1",
+        "infrastructure--40966019-7b3d-4994-8286-bd09ee9ef782",
+        "tool--e4c79ad7-7291-4b02-8d81-ae59fdc02fed",
+        "threat-actor--4d8dc843-c90a-4e73-a14e-4a13effdc8ff",
+        "attack-pattern--dc1cc91b-97e7-431f-b93b-e232c90d3464",
+        "incident--d8bbf637-6106-4357-bfb9-7ec41be810ff",
+        "note--054076ef-8f0d-4cbf-adcb-513ae29b39b0",
+        "note--8056f239-c6b3-4131-b7a5-2f7da6771dd3",
+        "note--1f685a39-dc59-4aca-bd3c-b84092d44750",
+        "note--1b3ee8d2-e48d-48ce-820e-69a425d60562"
+      ]
+    }
+  ]
+}

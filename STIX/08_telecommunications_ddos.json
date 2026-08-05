@@ -1,0 +1,158 @@
+{
+  "type": "bundle",
+  "id": "bundle--4fdbb0c8-077d-4e7c-b9be-8f8581f5d689",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--2dc5d0a1-720a-4445-98d5-892dd201c4e0",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Continental Telecom Services",
+      "identity_class": "organization",
+      "sectors": [
+        "telecommunications"
+      ]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--5908a03e-7ce8-4bb1-9f1d-0f1df7480e77",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Customer Self-Service Portal",
+      "description": "Customer-facing portal used for billing, account management, and service requests."
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--7447a316-2566-44eb-87fa-2183ec3647b4",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "DDoS Extortion Crew",
+      "threat_actor_types": [
+        "crime-syndicate"
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--b9b98d7e-5d58-42fd-a6d6-92470d4f2394",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Network Denial of Service",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1498"
+        }
+      ]
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--e525d379-bd7a-4b21-9cf3-32ff21c5c59e",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Telecommunications Customer Portal DDoS",
+      "description": "Large-scale DDoS attack disrupts customer-facing telecommunications services."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--ad4667c1-920f-4395-93d8-bde04d30d316",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 1 - Portal Unavailable",
+      "content": "Customers report that the self-service portal is unavailable. Call center volume increases sharply as users cannot access billing and account services."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--9ec0c1e0-1983-47c5-bf13-6c92928cad3d",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 2 - Traffic Spike",
+      "content": "Network operations observes a traffic spike exceeding normal baseline by more than 500 percent, with high-volume requests from distributed global sources."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--4ac41149-76d4-4265-b482-7abcb54430cd",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 3 - Botnet Indicators",
+      "content": "Security teams identify botnet-like traffic patterns, including repeated HTTP requests, spoofed headers, and source diversity across residential networks."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--03ca23da-30c5-499d-8910-c5e969a2191c",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 4 - Filtering and Communications",
+      "content": "Emergency traffic filtering is enabled with upstream providers. Communications teams prepare customer messaging about degraded online services."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--b5581f5c-3515-4a2e-98b7-6c42f29c1435",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Activate DDoS Mitigation",
+      "description": "Route traffic through scrubbing services, apply rate limits, and coordinate filtering with upstream network providers."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--e7fc61c3-a29b-49d3-a0e6-bfdaf72e67c4",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Customer Communications Response",
+      "description": "Issue service advisories, update status pages, and provide alternate support channels."
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--f9e78114-e1fa-4a65-9bb0-7d3586f9d3bc",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Telecommunications DDoS Tabletop Exercise",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-06-22T00:00:00.000Z",
+      "object_refs": [
+        "identity--2dc5d0a1-720a-4445-98d5-892dd201c4e0",
+        "infrastructure--5908a03e-7ce8-4bb1-9f1d-0f1df7480e77",
+        "threat-actor--7447a316-2566-44eb-87fa-2183ec3647b4",
+        "attack-pattern--b9b98d7e-5d58-42fd-a6d6-92470d4f2394",
+        "incident--e525d379-bd7a-4b21-9cf3-32ff21c5c59e",
+        "note--ad4667c1-920f-4395-93d8-bde04d30d316",
+        "note--9ec0c1e0-1983-47c5-bf13-6c92928cad3d",
+        "note--4ac41149-76d4-4265-b482-7abcb54430cd",
+        "note--03ca23da-30c5-499d-8910-c5e969a2191c"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--64735ce5-e680-455b-8e71-55079cb0de83",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "targets",
+      "source_ref": "threat-actor--7447a316-2566-44eb-87fa-2183ec3647b4",
+      "target_ref": "identity--2dc5d0a1-720a-4445-98d5-892dd201c4e0"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--55876284-4968-4e98-b226-2d9752fe9e4d",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--7447a316-2566-44eb-87fa-2183ec3647b4",
+      "target_ref": "attack-pattern--b9b98d7e-5d58-42fd-a6d6-92470d4f2394"
+    }
+  ]
+}

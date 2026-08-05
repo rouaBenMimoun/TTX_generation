@@ -1,0 +1,191 @@
+{
+  "type": "bundle",
+  "id": "bundle--ca2ec8ab-a6de-4f12-95db-16be1e2fb201",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--0b1e57f8-f413-4ee8-9340-9d284637f211",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Banking Organization (TTX participant)",
+      "identity_class": "organization",
+      "sectors": [
+        "financial-services"
+      ],
+      "description": "Commercial bank participating in the tabletop exercise."
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--d9a1b930-01b9-4540-8de4-a2a4722c7a11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Business email compromise actor",
+      "threat_actor_types": [
+        "crime-syndicate"
+      ],
+      "description": "Threat actor impersonating executives to induce fraudulent transfer approval."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--9c4ed3cb-61a1-4665-8bd5-3cf0ca4cf111",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Spoof executive payment instruction for urgent wire transfer",
+      "description": "Adversary uses executive impersonation and urgency to bypass dual authorization and out-of-band checks."
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--87d23d9c-d5f3-4706-8d5f-2eb4dd1f5b11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Urgent acquisition-closing wire email lure",
+      "pattern_type": "stix",
+      "pattern": "[email-message:subject MATCHES '(?i).*urgent.*wire.*closing.*' OR email-message:body MATCHES '(?i).*confidential.*today.*beneficiary.*']",
+      "valid_from": "2026-04-15T00:00:00.000Z",
+      "description": "Generic BEC-style lure targeting treasury or finance approvers."
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--bb2d477f-763f-49ab-aac6-0a6fd88a3211",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Fraudulent executive wire request simulation",
+      "description": "Simulated BEC-driven wire transfer fraud attempt against the bank's treasury approval process."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--1f67e93f-7c62-46e8-bd4d-1d21592efc11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 1: urgent confidential wire request",
+      "content": "A senior manager receives an email appearing to come from the CFO requesting immediate release of a large overseas wire tied to a confidential acquisition closing.",
+      "object_refs": [
+        "incident--bb2d477f-763f-49ab-aac6-0a6fd88a3211",
+        "indicator--87d23d9c-d5f3-4706-8d5f-2eb4dd1f5b11"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--5c0a6a55-13c3-4a50-b0d1-3b5fefabf011",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 2: transfer released and recall clock starts",
+      "content": "The wire is released after a pressured approval path; the bank must decide how to initiate recall, preserve evidence, notify counterpart institutions, and brief executives.",
+      "object_refs": [
+        "incident--bb2d477f-763f-49ab-aac6-0a6fd88a3211",
+        "identity--0b1e57f8-f413-4ee8-9340-9d284637f211"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--dc8e5d3b-03c7-4d07-b16b-78bd0fc66588",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 3: containment, investigation and wider exposure assessment",
+      "content": "Initial review indicates the email originated from a spoofed or deceptive source rather than the CFO's legitimate mailbox, but investigators cannot yet rule out mailbox compromise elsewhere in the executive support chain. The bank must determine whether this was a standalone social engineering attempt or part of a broader campaign targeting finance personnel and approval workflows.",
+      "object_refs": [
+        "incident--bb2d477f-763f-49ab-aac6-0a6fd88a3211",
+        "indicator--87d23d9c-d5f3-4706-8d5f-2eb4dd1f5b11",
+        "identity--0b1e57f8-f413-4ee8-9340-9d284637f211",
+        "course-of-action--8d8f25b4-e4ff-4fd9-8957-cb8c52e0bd11"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--b6aeb8de-e5c6-4469-9a8b-b76df8c849b8",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 4: outcome, recovery and reporting",
+      "content": "The bank receives partial feedback from external institutions: the transfer may be frozen in time, partially recovered, or moved onward before a full hold was placed. Leadership requests a decision on communications, regulatory notification, customer impact assessment, and post-incident remediation.",
+      "object_refs": [
+        "incident--bb2d477f-763f-49ab-aac6-0a6fd88a3211",
+        "identity--0b1e57f8-f413-4ee8-9340-9d284637f211",
+        "course-of-action--3ba69269-3b69-4f64-84d5-8b4c92f7b311",
+        "course-of-action--8d8f25b4-e4ff-4fd9-8957-cb8c52e0bd11"
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--8d8f25b4-e4ff-4fd9-8957-cb8c52e0bd11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Enforce out-of-band payment verification",
+      "description": "Require verbal or authenticated secondary verification for high-value beneficiary changes and urgent executive requests."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--3ba69269-3b69-4f64-84d5-8b4c92f7b311",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Fraud recall and law-enforcement coordination playbook",
+      "description": "Define immediate steps for recall, beneficiary bank contact, evidence preservation, and external coordination."
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--8c2f6f83-bfd2-4fa7-9cff-e0fb2cd5d411",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "TTX Scenario 2 - Business email compromise and wire fraud",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-04-15T00:00:00.000Z",
+      "description": "Scenario tests fraud control discipline, executive escalation, and post-transfer recovery actions.",
+      "object_refs": [
+        "identity--0b1e57f8-f413-4ee8-9340-9d284637f211",
+        "threat-actor--d9a1b930-01b9-4540-8de4-a2a4722c7a11",
+        "attack-pattern--9c4ed3cb-61a1-4665-8bd5-3cf0ca4cf111",
+        "indicator--87d23d9c-d5f3-4706-8d5f-2eb4dd1f5b11",
+        "incident--bb2d477f-763f-49ab-aac6-0a6fd88a3211",
+        "note--1f67e93f-7c62-46e8-bd4d-1d21592efc11",
+        "note--5c0a6a55-13c3-4a50-b0d1-3b5fefabf011",
+        "note--dc8e5d3b-03c7-4d07-b16b-78bd0fc66588",
+        "note--b6aeb8de-e5c6-4469-9a8b-b76df8c849b8",
+        "course-of-action--8d8f25b4-e4ff-4fd9-8957-cb8c52e0bd11",
+        "course-of-action--3ba69269-3b69-4f64-84d5-8b4c92f7b311"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--d33e2410-7cab-47d7-8e3a-f11b1a36db11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--d9a1b930-01b9-4540-8de4-a2a4722c7a11",
+      "target_ref": "attack-pattern--9c4ed3cb-61a1-4665-8bd5-3cf0ca4cf111"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--143ddca5-f40b-4ddc-9f2c-f43357ef5211",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "indicates",
+      "source_ref": "indicator--87d23d9c-d5f3-4706-8d5f-2eb4dd1f5b11",
+      "target_ref": "attack-pattern--9c4ed3cb-61a1-4665-8bd5-3cf0ca4cf111"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--1028072c-ac39-4d90-bba5-b7a3cfd6d711",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--8d8f25b4-e4ff-4fd9-8957-cb8c52e0bd11",
+      "target_ref": "attack-pattern--9c4ed3cb-61a1-4665-8bd5-3cf0ca4cf111"
+    }
+  ]
+}

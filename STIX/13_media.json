@@ -1,0 +1,65 @@
+{
+  "type": "bundle",
+  "id": "bundle--27a95f8b-4871-45be-864d-572119263408",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--4f6c8f33-7f71-4734-98d3-6a8a78b6d8cf",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Streaming Media Studio",
+      "identity_class": "organization",
+      "sectors": ["media", "entertainment"]
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--ee5914b3-27b6-49cc-a22b-dd4b511c9cad",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Pre-Release Content Theft TTX",
+      "description": "Attackers steal unreleased media content and threaten public leaks before scheduled launch."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--7bc326e7-5dc5-44d0-bbdc-e7e26506ad57",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 1 - Unreleased Content Access",
+      "content": "Unreleased episode files are accessed from an unusual foreign IP address.",
+      "object_refs": ["incident--ee5914b3-27b6-49cc-a22b-dd4b511c9cad"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--8fdc4ec4-b9d1-4f48-bad7-2e7fc0867a6c",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 2 - Leak Proof Posted",
+      "content": "The actor posts screenshots from unreleased content as proof of theft.",
+      "object_refs": ["incident--ee5914b3-27b6-49cc-a22b-dd4b511c9cad"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--ac77f8f2-4d63-40ad-a899-6a80b5be2df0",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 3 - Partner Assurance Request",
+      "content": "Distribution partners request assurance that shared pre-release materials and release schedules remain protected.",
+      "object_refs": ["incident--ee5914b3-27b6-49cc-a22b-dd4b511c9cad"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--9d25d52a-8d6b-40cf-81e1-1a505d48d47b",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 4 - Public Leak Threat",
+      "content": "The communications team prepares a response after the actor threatens to leak full episodes publicly.",
+      "object_refs": ["incident--ee5914b3-27b6-49cc-a22b-dd4b511c9cad"]
+    }
+  ]
+}

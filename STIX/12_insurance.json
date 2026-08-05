@@ -1,0 +1,75 @@
+{
+  "type": "bundle",
+  "id": "bundle--a9621a0d-2a76-4771-9e3e-b8a6d7be8321",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--e99e73bc-f33f-44d8-b0bb-ec7c7f8a8c0a",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Property and Casualty Insurance Carrier",
+      "identity_class": "organization",
+      "sectors": ["insurance", "financial-services"]
+    },
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--25a9e128-6709-4d3c-b8fc-f9c8f3e7b4e2",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Third-Party Claims Adjuster",
+      "identity_class": "organization",
+      "sectors": ["insurance"]
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--5d0fc68a-5335-4d0b-852b-1a5c25f80ecf",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Insurance Claims Portal Compromise TTX",
+      "description": "A compromised third-party adjuster account is used to access claims records containing personal and financial information."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--bf0d6b16-cda9-4405-90ff-ae3b3dc9317d",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 1 - Claims Export Alert",
+      "content": "Security monitoring detects unusual bulk exports of claims records from a third-party adjuster account.",
+      "object_refs": ["incident--5d0fc68a-5335-4d0b-852b-1a5c25f80ecf"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--1d6c0c55-91a6-43c9-b737-6d1a44a01c3e",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 2 - Fraudulent Claim Updates",
+      "content": "The fraud team identifies suspicious claim updates and altered payment destination details.",
+      "object_refs": ["incident--5d0fc68a-5335-4d0b-852b-1a5c25f80ecf"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--4fbe6945-232d-49ce-bbd7-48be9c1cf35a",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 3 - Privacy Impact Assessment",
+      "content": "Privacy counsel assesses whether claimant personal and financial information was exposed.",
+      "object_refs": ["incident--5d0fc68a-5335-4d0b-852b-1a5c25f80ecf"]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--4c62efcd-462f-4c7c-a439-2401a0f8856e",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 4 - Vendor Access Governance",
+      "content": "Vendor management reviews third-party account lifecycle controls, MFA enforcement, and contractual notification obligations.",
+      "object_refs": ["incident--5d0fc68a-5335-4d0b-852b-1a5c25f80ecf"]
+    }
+  ]
+}

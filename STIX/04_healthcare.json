@@ -1,0 +1,173 @@
+{
+  "type": "bundle",
+  "id": "bundle--e3a69ec7-6a59-4762-a50b-5a96a88e6f24",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--61efba91-1c6f-4954-bc99-d5a4a5c72b40",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Metro Regional Hospital",
+      "identity_class": "organization",
+      "sectors": ["healthcare"]
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--82169fbb-3a01-42f8-bdc5-6a92f6935d15",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Radiology Imaging Network",
+      "description": "Clinical imaging systems supporting CT, MRI, and X-ray workflows."
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--5eb4adcb-19cd-4546-a51e-d211d1aabff0",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Healthcare Intrusion Operator",
+      "threat_actor_types": ["crime-syndicate"]
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--e7399f28-b9bc-44fa-868f-5aafdf8ed365",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "MedLock Loader",
+      "is_family": false,
+      "description": "Malware used to disrupt clinical workstations and spread through poorly segmented hospital networks."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--60fd0673-569d-4aa9-a56d-ae94e54cebd4",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "User Execution of Malicious Attachment",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1204"
+        }
+      ]
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--9b6b39fb-44fd-4df4-a06b-88f2e781e65a",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Medical Imaging Malware Disruption",
+      "description": "Malware disrupts hospital imaging services and affects patient care operations."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--36b810d2-7389-49d3-9899-081d7f627d0f",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 1 - Suspicious Workstation Activity",
+      "content": "A radiology scheduling clerk reports opening an invoice attachment. Endpoint monitoring detects suspicious PowerShell activity on the workstation."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--e58fd2f7-1779-4697-b6f6-38366d9410d3",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 2 - Imaging Workflow Disruption",
+      "content": "CT and MRI workstations begin rebooting unexpectedly. Clinicians cannot reliably access imaging results through the PACS viewer."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--bcc23813-c897-452a-8ef6-b8ee9b74acee",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 3 - Malware Confirmed",
+      "content": "Security analysts confirm malware on systems connected to the radiology imaging network. Network segmentation gaps may have allowed spread from administrative systems."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--35661c16-b82d-4b7e-ac4c-2f3e6d95d86c",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "abstract": "Inject 4 - Patient Care Escalation",
+      "content": "Emergency department leadership considers diverting trauma patients to nearby hospitals because urgent imaging availability is unreliable."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--f5ee9452-8a12-4401-a4e2-2b7d0a03f3c6",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Isolate Clinical Imaging Network",
+      "description": "Restrict connectivity between administrative systems and radiology infrastructure."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--7a25d6bd-d1e7-49fd-b761-9d6357150afd",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Activate Patient Care Downtime Procedures",
+      "description": "Use manual clinical workflows and diversion protocols where necessary."
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--5ae839fb-9658-4afc-9f63-965e4cd25509",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "name": "Healthcare Medical Imaging Malware Tabletop Exercise",
+      "report_types": ["threat-report"],
+      "published": "2026-06-22T00:00:00.000Z",
+      "object_refs": [
+        "identity--61efba91-1c6f-4954-bc99-d5a4a5c72b40",
+        "infrastructure--82169fbb-3a01-42f8-bdc5-6a92f6935d15",
+        "threat-actor--5eb4adcb-19cd-4546-a51e-d211d1aabff0",
+        "malware--e7399f28-b9bc-44fa-868f-5aafdf8ed365",
+        "attack-pattern--60fd0673-569d-4aa9-a56d-ae94e54cebd4",
+        "incident--9b6b39fb-44fd-4df4-a06b-88f2e781e65a",
+        "note--36b810d2-7389-49d3-9899-081d7f627d0f",
+        "note--e58fd2f7-1779-4697-b6f6-38366d9410d3",
+        "note--bcc23813-c897-452a-8ef6-b8ee9b74acee",
+        "note--35661c16-b82d-4b7e-ac4c-2f3e6d95d86c"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--14901e43-f7cb-4f38-8778-ad43de4f81fc",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "targets",
+      "source_ref": "threat-actor--5eb4adcb-19cd-4546-a51e-d211d1aabff0",
+      "target_ref": "identity--61efba91-1c6f-4954-bc99-d5a4a5c72b40"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--ae8ab260-0427-4f4e-9f7f-1670c6bfafcd",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--5eb4adcb-19cd-4546-a51e-d211d1aabff0",
+      "target_ref": "attack-pattern--60fd0673-569d-4aa9-a56d-ae94e54cebd4"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--efbfac37-2ed7-4f47-9f35-0901c6935de2",
+      "created": "2026-06-22T00:00:00.000Z",
+      "modified": "2026-06-22T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--5eb4adcb-19cd-4546-a51e-d211d1aabff0",
+      "target_ref": "malware--e7399f28-b9bc-44fa-868f-5aafdf8ed365"
+    }
+  ]
+}
