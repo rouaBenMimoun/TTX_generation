@@ -1,0 +1,199 @@
+{
+  "type": "bundle",
+  "id": "bundle--3f4f5d10-8a2e-4c75-9b5c-1d2b3e4f5a61",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--5a4d6d30-2d52-4e9a-8d19-3bda942d1011",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Banking Organization (TTX participant)",
+      "identity_class": "organization",
+      "sectors": [
+        "financial-services"
+      ],
+      "description": "Retail and commercial bank participating in the tabletop exercise."
+    },
+    {
+      "type": "infrastructure",
+      "spec_version": "2.1",
+      "id": "infrastructure--1b5d7609-fb9b-4c1b-9f4b-3f06a5875f11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Retail payment processing environment",
+      "description": "Environment supporting ACH, SEPA, domestic transfer, and settlement workflows."
+    },
+    {
+      "type": "threat-actor",
+      "spec_version": "2.1",
+      "id": "threat-actor--2d16b4c1-4d1f-4c87-8d1e-7b105d7ab211",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Financially motivated ransomware operator",
+      "threat_actor_types": [
+        "crime-syndicate"
+      ],
+      "description": "Threat actor deploying ransomware after gaining access to internal banking systems."
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--1ce1eac0-3988-4d28-8d5e-4127ab792311",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Enterprise ransomware payload",
+      "is_family": false,
+      "description": "Ransomware encrypting payment processing servers and shared operations drives."
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--ce85a290-cd75-4e6f-8c2a-c8cda77b4411",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Encrypt payment operations systems to disrupt settlement",
+      "description": "Adversary encrypts key payment systems to interrupt time-sensitive processing and increase pressure on the bank."
+    },
+    {
+      "type": "incident",
+      "spec_version": "2.1",
+      "id": "incident--6a30a490-f7f2-4da0-8fb7-3ccf13e7c711",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Ransomware affecting retail payment operations",
+      "description": "Simulated incident involving ransomware in the payments environment ahead of settlement deadlines."
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--f9ca2a11-3d9b-41b0-8fd4-79a13b0eb911",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 1: payment queue backlog and encryption alerts",
+      "content": "Operations reports failed payment batches and SOC confirms ransomware activity on payment processing servers two hours before end-of-day settlement.",
+      "object_refs": [
+        "incident--6a30a490-f7f2-4da0-8fb7-3ccf13e7c711",
+        "infrastructure--1b5d7609-fb9b-4c1b-9f4b-3f06a5875f11",
+        "malware--1ce1eac0-3988-4d28-8d5e-4127ab792311"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--0eea4b25-b58d-4cb4-9f72-d0c9bc7db511",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 2: executive decision point",
+      "content": "Executives must decide whether to isolate the entire payment environment, activate manual fallback processes, delay customer transfers, and notify the regulator before settlement cut-off.",
+      "object_refs": [
+        "incident--6a30a490-f7f2-4da0-8fb7-3ccf13e7c711",
+        "identity--5a4d6d30-2d52-4e9a-8d19-3bda942d1011"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--3f7c5c89-6c7d-4c9d-a4a8-1c5e8f8c3001",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 3: containment stabilized and restoration decisions begin",
+      "content": "Containment measures have reduced further spread within the payment zone. Encryption has rendered multiple payment servers and shared operational resources unavailable. Incident response advises that restoration should not begin until evidence is preserved and recovery sequencing is approved. Manual fallback processing has started, but backlog and customer delay pressure are increasing.",
+      "object_refs": [
+        "incident--6a30a490-f7f2-4da0-8fb7-3ccf13e7c711",
+        "infrastructure--1b5d7609-fb9b-4c1b-9f4b-3f06a5875f11",
+        "course-of-action--b72cafe7-2a1f-42d8-8789-ae7a0e1d7d11"
+      ]
+    },
+    {
+      "type": "note",
+      "spec_version": "2.1",
+      "id": "note--d5e7a7c0-8f5d-4ef8-b4b0-0c8f4b8f3002",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "abstract": "Inject 4: recovery, notification and post-incident management",
+      "content": "The payment environment is being restored in a controlled sequence. Critical systems are returning, but some transfers were delayed and selected customers experienced disruption. Executives must determine the scope of regulator communications, customer messaging, internal reporting, and post-incident review actions.",
+      "object_refs": [
+        "incident--6a30a490-f7f2-4da0-8fb7-3ccf13e7c711",
+        "identity--5a4d6d30-2d52-4e9a-8d19-3bda942d1011",
+        "course-of-action--fd8d0f2e-0a1a-4d9a-8d8e-5baf8f2ed811",
+        "course-of-action--b72cafe7-2a1f-42d8-8789-ae7a0e1d7d11"
+      ]
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--fd8d0f2e-0a1a-4d9a-8d8e-5baf8f2ed811",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Activate payment continuity fallback",
+      "description": "Switch priority payment flows to documented fallback procedures and apply transaction prioritization."
+    },
+    {
+      "type": "course-of-action",
+      "spec_version": "2.1",
+      "id": "course-of-action--b72cafe7-2a1f-42d8-8789-ae7a0e1d7d11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "Contain and preserve evidence in payment zone",
+      "description": "Isolate affected servers, preserve forensic artifacts, and control restoration sequencing for payment infrastructure."
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--6e53d512-b973-4c52-87bb-eed7323ee911",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "name": "TTX Scenario 1 - Ransomware impact on retail payments",
+      "report_types": [
+        "threat-report"
+      ],
+      "published": "2026-04-15T00:00:00.000Z",
+      "description": "Scenario tests payment continuity, containment, executive authority, and regulatory communication under ransomware pressure.",
+      "object_refs": [
+        "identity--5a4d6d30-2d52-4e9a-8d19-3bda942d1011",
+        "infrastructure--1b5d7609-fb9b-4c1b-9f4b-3f06a5875f11",
+        "threat-actor--2d16b4c1-4d1f-4c87-8d1e-7b105d7ab211",
+        "malware--1ce1eac0-3988-4d28-8d5e-4127ab792311",
+        "attack-pattern--ce85a290-cd75-4e6f-8c2a-c8cda77b4411",
+        "incident--6a30a490-f7f2-4da0-8fb7-3ccf13e7c711",
+        "note--f9ca2a11-3d9b-41b0-8fd4-79a13b0eb911",
+        "note--0eea4b25-b58d-4cb4-9f72-d0c9bc7db511",
+        "note--3f7c5c89-6c7d-4c9d-a4a8-1c5e8f8c3001",
+        "note--d5e7a7c0-8f5d-4ef8-b4b0-0c8f4b8f3002",
+        "course-of-action--fd8d0f2e-0a1a-4d9a-8d8e-5baf8f2ed811",
+        "course-of-action--b72cafe7-2a1f-42d8-8789-ae7a0e1d7d11"
+      ]
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--a5b5870b-0bc7-4332-9ab9-e2be26ffda11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "uses",
+      "source_ref": "threat-actor--2d16b4c1-4d1f-4c87-8d1e-7b105d7ab211",
+      "target_ref": "malware--1ce1eac0-3988-4d28-8d5e-4127ab792311"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--8930f6f0-69ec-482a-bb4c-b4fb7d354711",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "targets",
+      "source_ref": "attack-pattern--ce85a290-cd75-4e6f-8c2a-c8cda77b4411",
+      "target_ref": "infrastructure--1b5d7609-fb9b-4c1b-9f4b-3f06a5875f11"
+    },
+    {
+      "type": "relationship",
+      "spec_version": "2.1",
+      "id": "relationship--23c9f475-7c58-4e09-b260-c8c7614a6d11",
+      "created": "2026-04-15T00:00:00.000Z",
+      "modified": "2026-04-15T00:00:00.000Z",
+      "relationship_type": "mitigates",
+      "source_ref": "course-of-action--fd8d0f2e-0a1a-4d9a-8d8e-5baf8f2ed811",
+      "target_ref": "attack-pattern--ce85a290-cd75-4e6f-8c2a-c8cda77b4411"
+    }
+  ]
+}
